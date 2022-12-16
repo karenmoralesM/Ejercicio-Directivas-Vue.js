@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tema Vue.js-3 fecha-4-noviembre-2022</title>
+    <script src="https://unpkg.com/vue@3.2.41/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <h1 class="titulo">Ejercicios de las directivas de Vue.js</h1>
+    <!-- Ambito por donde va a salir javascritp es lo primero -->
+    <main id="app">
+        <!-- aqui va lo que es dinamico viene js (vuejs) -->
+        <h2>Tu nombre es:{{name}}</h2>
+        <h2>tu edad: {{age}}</h2>
+        <h2> tu estado: {{estado}}</h2>
+        <h2>tu correo: {{email}}</h2>
+
+        <hr>
+
+        <h1>Productos ofrecidos</h1>
+        <h3>nombre del producto: {{nombre}}</h3>
+        <h3>precio: {{precio}}</h3>
+        <h3>carne kg: {{peso}}</h3>
+        <hr>
+
+        <h1>---Segunda Forma Directiva<code>v-html</code></h1>
+        <h2 v-text="viutext"></h2>
+
+        <h1 v-text="apellido"></h1>
+
+        <p v-html="apellido2"></p>
+
+        <p v-html="ficha"></p>
+
+        <hr>
+
+        <h1>cuarta Forma Directiva <code>v-show</code></h1>
+        <h3 v-show="age>18">Eres mayor de edad</h3>
+        <h3 v-show="age<18">Eres menor de edad</h3>
+        <hr>
+
+        <h1>quinta forma Directiva<code>v-if</code></h1>
+        <h3 v-if="age>18">Eres mayor de edad</h3>
+        <h3 v-if="age<18">Eres mayor de edad</h3>
+        <hr>
+
+        <h1>quinta forma Directiva<code>v-else-if</code></h1>
+        <h3 v-if="gender=='F'">Eres mujer </h3>
+        <h3 v-else-if="gender=='M'">Eres hombre</h3>
+        <h3 v-else-if="gender=='O'">indefinido</h3>
+
+        <h1>ejemplo 1 </h1>
+        <h3 v-if="climate=='F'">tienes hambre</h3>
+        <h3 v-else-if="climate=='C'">no tienes hambre</h3>
+        <h3 v-else-if="climate=='L'">no comes</h3>
+        <hr>
+
+        <h1>ejemplo 2 </h1>
+        <h3 v-if="emociones=='E'">estas feliz</h3>
+        <h3 v-else-if="emociones=='B'">Estas bravo</h3>
+        <h3 v-else-if="emociones=='N'">no sabes</h3>
+        <hr>
+        <h1>sexta forma Directiva<code>v-for</code></h1>
+        <h3 v-for="animal, index in animals" :key="index"> {{index}}. {{animal}} </h3>
+        <hr>
+
+        <h1>septima forma Directiva<code>v-on</code></h1>
+        <button v-on:click="counter += 1">Agregar 1</button>
+
+        <button v-on:click="counter = 0">Reset</button>
+        <p>se ha hecho <b>{{ counter }}</b> clicks.</p>
+
+
+
+
+        <hr>
+        <h1>septima forma Directiva <code> v - bind</code></h1>
+        <img v-bind:src="img" v-bind:alt="alt" /> <br>
+        <img :src="img" :alt="alt" />
+
+        <hr />
+        <h1>decima forma Directiva <code>v-model</code></h1>
+        <h2>Tu nombre es: {{name}}</h2>
+
+        <label for="">Tu nombre es:</label>
+        <input type="text" v-model="name" />
+
+    </main>
+    <script>
+        const hola = {
+            data() {
+                return {
+                    name: "karen morales",
+                    age: 20,
+                    estado: "union libre",
+                    email: "maria.morales.884@misena.edu.co",
+                    nombre: "carne",
+                    precio: "$48.000",
+                    peso: "9 kilo",
+                    viutext: "karen",
+                    apellido: "Morales",
+                    apellido2: "<h3> morales </h3>",
+                    ficha: "<h2>2452439</h2>",
+                    gender: "F",
+                    climate: "L",
+                    emociones: "B",
+                    animals: ["gato", "perro", "pajaro", "dinosaurio"],
+                    counter: 0,
+                    img: "https://placeimg.com/400/400/any",
+                    alt: "Logo",
+                };
+            },
+        };
+
+        Vue.createApp(hola).mount("#app"); //crear la aplicaion y montarla
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+/*Titulo*/
+.titulo {
+    text-align: center;
+    background-color: rgb(191, 131, 248);
+
+
+}
+
+.titulo:hover {
+
+    color: rgb(224, 242, 167);
+}
+
+/*BOTONES ANIMADOS*/
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ccc;
+    transition: background-color 2s;
+    animation: color-change 2s infinite;
+}
+
+@keyframes color-change {
+    0% {
+        background-color: rgb(240, 126, 212);
+    }
+
+    33% {
+        background-color: rgb(167, 251, 167);
+    }
+
+    66% {
+        background-color: rgb(191, 89, 188);
+    }
+
+    100% {
+        background-color: rgb(131, 25, 115);
+    }
+}
